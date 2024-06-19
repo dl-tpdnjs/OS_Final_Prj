@@ -289,7 +289,7 @@ class TimerPanel3 extends JPanel {
         @Override
         public void run() {
             try {
-                Path path = Paths.get(filePath);
+                Path path = Paths.get(new File(filePath).getAbsolutePath());
                 WatchService watchService = FileSystems.getDefault().newWatchService();
                 path.getParent().register(watchService, StandardWatchEventKinds.ENTRY_MODIFY);
 
