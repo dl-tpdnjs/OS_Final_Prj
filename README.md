@@ -212,9 +212,6 @@
 - 기능 구현 : 2024-06-14 ~ 2024-06-20
 
 
-
-
-
 <br>
 
 ### 작업 관리
@@ -225,8 +222,6 @@
 - 프론트엔드에서는 각자 구현한 화면을 공유하기 위해서 각자의 브랜치에 수정 사항을 업로드하고, 카톡으로 알려주면 파일을 바꾸는 것으로 서로 간의 화면 동기화를 계속해서 진행하였습니다.
 
 - 벡엔드에서는 ~~~ 
-
-
 
 
 
@@ -258,11 +253,6 @@
 ![시작화면_2](https://github.com/dl-tpdnjs/OS_Final_Prj/assets/155309085/36f689ee-ec35-463f-bc89-b538dfb1d1ff)
 
 - 강의명과 강의 시간을 입력한 후 '시작' 버튼을 눌렀을 때의 화면입니다. 하단에 입력한 강의 시간을 기준으로 흐른 시간의 비율을 보여주는 타이머 바와 흐른 시간을 (시):(분):(초) 형식으로 알려주는 타이머가 생성됩니다.
-
-
-
-
-
 
 
 <br>
@@ -311,7 +301,7 @@
 ## 7. 오픈소스 코드 설명(벡엔드분들 여기에 자신이 코드를 어떻게 수정했는지 너무 길게는 아니고 좀 간단하게 작성해보셔요)
 ### 활용한 오픈소스 링크
 - https://github.com/Shayan925/ADHD-Aid
-    
+    - 어떤 점을 수정했는지 작성해주시면 될 것 같습니다!!
 
 
 
@@ -406,6 +396,6 @@
 
 ## 11. 라이선스 표기 📝
 
-This project is [MIT](https://github.com/kefranabg/readme-md-generator/blob/master/LICENSE) licensed.
+This project is [MIT](https://github.com/dl-tpdnjs/OS_Final_Prj/blob/main/LICENSE.txt) licensed.
 
 ---
