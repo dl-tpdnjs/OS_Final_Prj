@@ -151,7 +151,9 @@
 - (벡엔드분들이 설치해야 하는 정보들을 작성해주세요. 주연님의 requirements.txt 파일로 가상환경 설정하는 부분은 제가 작성할게요!)
 
 - 가상환경 설정
-    - 
+    """
+    pip install -r requirements.txt
+    """
 
 
 
