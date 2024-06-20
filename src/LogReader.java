@@ -12,7 +12,7 @@ public class LogReader {
 
     public Vector<Map<String, String>> getList() {
         Vector<Map<String, String>> allList = new Vector<>();
-        File csv = new File("src/log.txt");
+        File csv = new File("log.csv");
         BufferedReader br = null;
 
         try {

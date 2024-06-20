@@ -10,34 +10,6 @@ public class DataWriter {
         return lecturenum;
     }
 
-    public String lecture_name() {
-        String lecturename = null;
-        StartPanel start = new StartPanel();
-        lecturename = start.lecture_name;
-        return lecturename;
-    }
-
-    public String lecture_time() {
-        String lecturetime = null;
-        StartPanel start = new StartPanel();
-        lecturetime = start.lecture_time;
-        return lecturetime;
-    }
-
-    public String button_start() {
-        String buttonstart = null;
-        StartPanel start = new StartPanel();
-        buttonstart = start.lec_start;
-        return buttonstart;
-    }
-
-    public String button_end() {
-        String buttonend = null;
-        StartPanel start = new StartPanel();
-        buttonend = start.lec_end;
-        return buttonend;
-    }
-
     public void WriteData(String name, String start, String end, String time) {
         File csv = new File(filepath);
         BufferedWriter bw = null;
@@ -51,7 +23,7 @@ public class DataWriter {
             for (int i = 0; i < length; i++) {
                 String data = "";
                 data = data.join(",", String.valueOf(lecture_num()), name, start, end, time,
-                        reader.getList().get(i).get("lost_start"), reader.getList().get(i).get("lost_end"));
+                        reader.getList().get(i).get("lost"), reader.getList().get(i).get("regained"));
                 bw.newLine();
                 bw.write(data);
             }
