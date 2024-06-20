@@ -9,6 +9,8 @@ public class Main_All_test extends JFrame {
 
     private JTabbedPane pane;
     private TimerPanel4 analysisPanel;
+    private Color mainColor = new Color(0x1a3263);
+    private Color whiteColor = Color.WHITE;
 
     public Main_All_test() {
         setSize(800, 600);
@@ -18,6 +20,9 @@ public class Main_All_test extends JFrame {
         analysisPanel = new TimerPanel4("lectureLost.csv");
 
         pane = new JTabbedPane();
+        pane.setBackground(mainColor);
+        pane.setForeground(whiteColor);
+
         pane.addTab("집중도 측정", startPanel);
         pane.addTab("집중도 보고서", analysisPanel); //보고서 탭
 

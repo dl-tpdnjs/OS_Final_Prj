@@ -20,6 +20,8 @@ class TimerPanel4 extends JPanel {
     private Font defaultFont = new Font("NPS font", Font.PLAIN, 15);
     private Color backgroundColor = new Color(0xe8e2db);
     private Color highlightColor = new Color(0xf5564e);
+    private Color mainColor = new Color(0x1a3263);
+    private Color whiteColor = Color.WHITE;
 
 
     // 생성자
@@ -148,6 +150,7 @@ class TimerPanel4 extends JPanel {
         JLabel name = new JLabel("< " + lectureName + " >");
         name.setBackground(new Color(0x003b6f));
         name.setFont(new Font("NPS font", Font.BOLD, 20));
+        name.setForeground(mainColor);
         return name;
     }
 
@@ -176,6 +179,8 @@ class TimerPanel4 extends JPanel {
 
         JLabel label = new JLabel(labelText.toString());
         label.setFont(defaultFont); // 폰트 설정
+        label.setForeground(Color.DARK_GRAY);
+
 
         return label; // 완성된 라벨 반환
     }
@@ -208,6 +213,9 @@ class TimerPanel4 extends JPanel {
 
         JLabel label = new JLabel(labelTextBeforeFirstComma.toString());
         label.setFont(defaultFont); // 폰트 설정
+        label.setForeground(Color.DARK_GRAY);
+
+
 
         return label; // 완성된 라벨 반환
     }
@@ -245,6 +253,7 @@ class TimerPanel4 extends JPanel {
 
         JLabel label = new JLabel(labelText.toString());
         label.setFont(defaultFont); // 폰트 설정
+        label.setForeground(Color.DARK_GRAY);
 
         return label; // 완성된 라벨 반환
 

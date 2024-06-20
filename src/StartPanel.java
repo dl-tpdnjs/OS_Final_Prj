@@ -11,6 +11,8 @@ public class StartPanel extends JPanel {
     public String lec_start;
     public String lec_end;
     private Font defaultFont = new Font("NPS font", Font.PLAIN, 15);
+    private Color mainColor = new Color(0x1a3263);
+    private Color whiteColor = Color.WHITE;
 
 
     public StartPanel() {
@@ -51,12 +53,19 @@ public class StartPanel extends JPanel {
         //uppanel 시작
         JLabel titlelabel = new JLabel("수강할 강의명을 입력해주세요.");
         titlelabel.setFont(defaultFont);
+        titlelabel.setForeground(mainColor);
+
+
 
         JTextField titlefield = new JTextField(15);
         titlefield.setFont(defaultFont);
+        titlefield.setForeground(mainColor);
+
 
         JButton titlebutton = new JButton("확인");
         titlebutton.setFont(defaultFont);
+        titlebutton.setForeground(whiteColor);
+        titlebutton.setBackground(mainColor);
 
         titlebutton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -67,12 +76,17 @@ public class StartPanel extends JPanel {
 
         JLabel timelabel = new JLabel("수강할 강의 시간을 입력해주세요.");
         timelabel.setFont(defaultFont);
+        timelabel.setForeground(mainColor);
 
         JTextField timefield = new JTextField("00:00:00", 15);
         timefield.setFont(defaultFont);
+        timefield.setForeground(mainColor);
+
 
         JButton timebutton = new JButton("확인");
         timebutton.setFont(defaultFont);
+        timebutton.setForeground(whiteColor);
+        timebutton.setBackground(mainColor);
 
         timebutton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -94,9 +108,13 @@ public class StartPanel extends JPanel {
         //centerpanel 시작
         JButton startBt = new JButton("시작");
         startBt.setFont(defaultFont);
+        startBt.setForeground(whiteColor);
+        startBt.setBackground(mainColor);
 
         JButton endBt = new JButton("종료");
         endBt.setFont(defaultFont);
+        endBt.setForeground(whiteColor);
+        endBt.setBackground(mainColor);
 
         endBt.setVisible(false);
 

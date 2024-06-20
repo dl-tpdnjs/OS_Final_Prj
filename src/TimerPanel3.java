@@ -19,7 +19,6 @@ class TimerPanel3 extends JPanel {
     private JLabel label;
     private JPanel mainPanel; // 메인 패널 필드 추가
     private Font defaultFont = new Font("NPS font", Font.PLAIN, 15);
-    private Color mainColor = new Color(0xfab95b);
     private Color backgroundColor = new Color(0xe8e2db);
     private Color highlightColor = new Color(0xf5564e);
 
