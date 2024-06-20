@@ -10,7 +10,6 @@ public class StartPanel extends JPanel {
     public String lecture_time;
     public String lec_start;
     public String lec_end;
-    public int sec;
     private Font defaultFont = new Font("NPS font", Font.PLAIN, 15);
 
 
