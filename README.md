@@ -244,13 +244,10 @@
 - 종료 버튼을 누르면, 종료 시간과 함께 동공 트래킹의 결과(집중력을 잃은 당시 현재 시간과 집중력을 회복한 당시 현재 시간), 강의명, 강의 시간 등이 보고서에 활용될 수 있도록 가공되어 lectureLost.csv 파일에 저장됩니다.
 
 ![start1](https://github.com/dl-tpdnjs/OS_Final_Prj/assets/165643812/8e77478c-0fd9-405c-849f-01fa3a8aa5ba)
-- 시작 버튼을 누르지 않았을 경우의 화면입니다.
-
-![start2](https://github.com/dl-tpdnjs/OS_Final_Prj/assets/165643812/e96d316c-be30-47b3-8ccd-e1ab8b86909d)
-
+- 시작 화면입니다.
 
 ![start3](https://github.com/dl-tpdnjs/OS_Final_Prj/assets/165643812/1bf15cd4-89c6-47bf-b96d-cc707103d202)
-- 시작 버튼을 눌렀을 경우의 화면입니다.
+- 강의명과 강의 시간을 입력한 후 '시작' 버튼을 눌렀을 때의 화면입니다. 하단에 입력한 강의 시간을 기준으로 흐른 시간의 비율을 보여주는 타이머 바와 흐른 시간을 (시):(분):(초) 형식으로 알려주는 타이머가 생성됩니다.
 
 
 
