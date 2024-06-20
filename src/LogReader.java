@@ -12,7 +12,7 @@ public class LogReader {
 
     public Vector<Map<String, String>> getList() {
         Vector<Map<String, String>> allList = new Vector<>();
-        File csv = new File("log.csv");
+        File csv = new File("log.csv"); //ActivatePy.java에서 12번째 줄 주석 처리 해제 시 "eye_tracker.py 디렉토리/log.csv"로 수정
         BufferedReader br = null;
 
         try {
