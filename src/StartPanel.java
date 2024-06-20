@@ -158,8 +158,6 @@ public class StartPanel extends JPanel {
 
         //downpanel 시작
 
-        JLabel timeL = new JLabel("00:00:00");
-
         downpanel.add(panel3);
         downpanel.add(panel4);
 
