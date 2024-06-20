@@ -69,7 +69,7 @@ public class StartPanel extends JPanel {
         JLabel timelabel = new JLabel("수강할 강의 시간을 입력해주세요.");
         timelabel.setFont(defaultFont);
 
-        JTextField timefield = new JTextField(15);
+        JTextField timefield = new JTextField("00:00:00:", 15);
         timefield.setFont(defaultFont);
 
         JButton timebutton = new JButton("확인");
