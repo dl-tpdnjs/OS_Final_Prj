@@ -146,75 +146,12 @@
 
 <br>
 
-## 3. 프로젝트 구조 (이건 프론트와 벡을 나눠서 만들어보는걸로 해요.)
+## 3. 설치 및 설정 방법과 사용법
+### 설치 및 설정 방법
+- (벡엔드분들이 설치해야 하는 정보들을 작성해주세요. 주연님의 requirements.txt 파일로 가상환경 설정하는 부분은 제가 작성할게요!)
 
-```
-├── README.md
-├── .eslintrc.js
-├── .gitignore
-├── .prettierrc.json
-├── package-lock.json
-├── package.json
-│
-├── public
-│    └── index.html
-└── src
-     ├── App.jsx
-     ├── index.jsx
-     ├── api
-     │     └── mandarinAPI.js
-     ├── asset
-     │     ├── fonts
-     │     ├── css_sprites.png
-     │     ├── logo-404.svg
-     │     └── logo-home.svg
-     │          .
-     │          .
-     │          .
-     ├── atoms
-     │     ├── LoginData.js
-     │     └── LoginState.js
-     ├── common
-     │     ├── alert
-     │     │     ├── Alert.jsx
-     │     │     └── Alert.Style.jsx
-     │     ├── button
-     │     ├── comment
-     │     ├── inputBox
-     │     ├── post
-     │     ├── postModal
-     │     ├── product
-     │     ├── tabMenu
-     │     ├── topBanner
-     │     └── userBanner
-     ├── pages
-     │     ├── addProduct
-     │     │     ├── AddProduct.jsx
-     │     │     └── AddProduct.Style.jsx
-     │     ├── chatList
-     │     ├── chatRoom
-     │     ├── emailLogin
-     │     ├── followerList
-     │     ├── followingList
-     │     ├── home
-     │     ├── join
-     │     ├── page404
-     │     ├── postDetail
-     │     ├── postEdit
-     │     ├── postUpload
-     │     ├── productEdit
-     │     ├── profile
-     │     ├── profileEdit
-     │     ├── profileSetting
-     │     ├── search
-     │     ├── snsLogin
-     │     └── splash
-     ├── routes
-     │     ├── privateRoutes.jsx
-     │     └── privateRoutesRev.jsx  
-     └── styles
-           └── Globalstyled.jsx
-```
+- 가상환경 설정
+    - 
 
 
 
@@ -243,7 +180,8 @@
 <br>
 
 ### 😎송하은
-
+- **README.md** 
+    - 대부분의 내용을 작성 완료함.
 - **UI**
     - 화면 : 보고서 화면 (강의 당 각각의 패널 생성)
 - **기능**
@@ -370,8 +308,9 @@
 
 <br>
 
-## 8. 화면 동작성 설명 : 구현 결과
-- 
+## 7. 오픈소스 코드 설명(벡엔드분들 여기에 자신이 코드를 어떻게 수정했는지 너무 길게는 아니고 좀 간단하게 작성해보셔요)
+### 활용한 오픈소스 링크
+- https://github.com/Shayan925/ADHD-Aid
     
 
 
@@ -382,7 +321,13 @@
 <br>
 
 ## 8. 프로젝트 수행 결과의 한계점(일단 프론트 내용은 작성이 끝났으니, 최종 보고서에 있는 개발 기술의 한계점을 작성하고 붙여넣으면 됩니다.)
-- 
+- 프론트엔드
+    - ‘시작’ 버튼 클릭 시 타이머 시작과 함께 eye_tracker.py를 실행하도록 설정하였는데, 실행하여 보니 eye_tracker.py를 호출하고 실행창이 뜨기까지 걸리는 시간이 예상했던 것보다 조금 더 걸리는 것을 확인할 수 있었다. 이 때문에 프로그램을 실행하는 컴퓨터의 상태에 따라 강의 초반 몇 초 동안은 사용자의 집중도 측정이 어려울 수 있다. → 하지만 해당 문제는 사용자가 사이버 강의를 틀자마자 집중력을 잃을 것이라고 생각하지 않는다면, 크게 문제가 되지 않을 수 있다.
+    - 사용자가 강의 집중도를 측정하기 위해서는 우선 Java 프로그램을 실행하고, 강의명과 강의 시간을 입력한 후 강의 시작과 함께 프로그램의 '시작' 버튼을 눌러야 한다. 만약 강의가 실시간 강의가 아닌 녹화 강의인 경우에는 사용자가 강의 동영상의 시작 버튼과 프로그램의 '시작' 버튼을 각각 클릭해야 하므로 사용자 입장에서는 이 점이 조금 번거롭게 느껴질 수 있다.
+    - 집중을 잃었을 시 타이머가 멈추는 기능이 따로 구현되지 않았다.
+    - 사용자에게 해당 정보를 측정하기 위해서는 앱 사용 조건을 꼭 지켜서 사용해야 한다는 한계점이 있다. 예를들어서 시작 버튼이나 종료 버튼을 누르는 과정을 사용자가 신경 써서 사용해야 한다는 점이다. 시작 버튼을 강의를 시작하고 바로 누르지 않으면 실제 강의에 대한 복습 시점이 딜레이 될 수 있고, 종료 버튼을 강의 시간보다 매우 오래 동안 누르지 않으면 보고서 화면에서 작성될 Bar에 베이지 색이 너무 많아져서 실제 자신이 강의 시간에 언제 집중력을 잃었는지 파악하는데에 어려움을 겪게 될 수 있다.
+    - 복습해야 할 시점은 오차가 생길 수 있다는 문제가 있다. 이는 실제로 강의를 모니터링하면서 복습해야 할 시점을 말해주는 것이 아니라 집중력을 잃은 시간에서 여러 수학적인 처리를 통해서 해당 위치에 약 15초 정도의 오차를 가지고 말해주기 때문에 발생하는 문제이다. → 하지만 이러한 문제는 사용자가 복습해야할 부분의 범위만 언급해주면 주체적으로 개념에 대해 앞 뒤로 보면서 파악할 것이라고 생각한다면 큰 문제가 생기지 않을 수 있을 것이다.
+
     
 <br>
 
@@ -456,3 +401,11 @@
 
 ### 🐬 이승채
 
+
+
+
+## 11. 라이선스 표기 📝
+
+This project is [MIT](https://github.com/kefranabg/readme-md-generator/blob/master/LICENSE) licensed.
+
+---
