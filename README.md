@@ -184,12 +184,18 @@
 
 
 4. 자바 에디터 속 **Main_All_test.java** 파일을 통해 어플리케이션을 실행시킨다.
-    (1-1) 이때, LectureLost.csv 파일의 코드상 경로들이 상대 경로로 설정되어 있어서 src 폴더의 바로 밖에 LectureLost.csv 파일이 위치한다면 대부분의 경우 올바르게 실행될 것이다.
-    (1-2) 혹시라도 제대로 실행되지 않는다면, LectureLost.csv 파일에 대한 절대 경로를 LectureLost.csv의 상대 경로로 지정되어 있는 부분에 붙여넣어 실행하면 된다.
 
-    (2-1) 시작 버튼이 눌려졌을 때, 제대로 웹캠이 실행되기 위해서는 파이썬 가상 환경의 폴더 경로와 eye_tracker.py 의 경로를 작성하는 것이 필요하다.
+
+    - (1-1) 이때, LectureLost.csv 파일의 코드상 경로들이 상대 경로로 설정되어 있어서 src 폴더의 바로 밖에 LectureLost.csv 파일이 위치한다면 대부분의 경우 올바르게 실행될 것이다.
+
+
+    - (1-2) 혹시라도 제대로 실행되지 않는다면, LectureLost.csv 파일에 대한 절대 경로를 LectureLost.csv의 상대 경로로 지정되어 있는 부분에 붙여넣어 실행하면 된다.
+
+
+    - (2-1) 시작 버튼이 눌려졌을 때, 제대로 웹캠이 실행되기 위해서는 파이썬 가상 환경의 폴더 경로와 eye_tracker.py 의 경로를 작성하는 것이 필요하다.
     
-    (2-2) ActivatePy.class에서의 가상 환경 및 python 파일 경로 설정이 필요하다. 우선 ActivatePy.class의 10번째 줄 virtualPath의 값에 (eye_tracker.py를 실행할 가상 환경 폴더의 경로)/python.exe를 입력한다. 그 다음 11번째 줄 new ProcessBuilder()에 다운로드 받은 eye_tracker.py의 경로를 입력해주면 된다.
+
+    - (2-2) ActivatePy.class에서의 가상 환경 및 python 파일 경로 설정이 필요하다. 우선 ActivatePy.class의 10번째 줄 virtualPath의 값에 (eye_tracker.py를 실행할 가상 환경 폴더의 경로)/python.exe를 입력한다. 그 다음 11번째 줄 new ProcessBuilder()에 다운로드 받은 eye_tracker.py의 경로를 입력해주면 된다.
 
     
 
@@ -438,4 +444,14 @@
 
 This project is [MIT](https://github.com/dl-tpdnjs/OS_Final_Prj/blob/main/LICENSE.txt) licensed.
 
+
+## 12. 프로젝트 팀원 깃허브 링크
+
+- [이세원/dl-tpdnjs](https://github.com/dl-tpdnjs).<br />
+
+- [김주연/kimkimikk](https://github.com/kimkimikk).<br />
+
+- [송하은/EunHaSong](https://github.com/EunHaSong).<br />
+
+- [이승채/chootkuri](https://github.com/chootkuri).<br />
 ---
