@@ -10,7 +10,6 @@ public class StartPanel extends JPanel {
     public String lecture_time;
     public String lec_start;
     public String lec_end;
-    public int sec;
     private Font defaultFont = new Font("NPS font", Font.PLAIN, 15);
 
 
@@ -69,7 +68,7 @@ public class StartPanel extends JPanel {
         JLabel timelabel = new JLabel("수강할 강의 시간을 입력해주세요.");
         timelabel.setFont(defaultFont);
 
-        JTextField timefield = new JTextField(15);
+        JTextField timefield = new JTextField("00:00:00", 15);
         timefield.setFont(defaultFont);
 
         JButton timebutton = new JButton("확인");
@@ -96,38 +95,40 @@ public class StartPanel extends JPanel {
         JButton startBt = new JButton("시작");
         startBt.setFont(defaultFont);
 
-        JButton resumeBt = new JButton("일시정지");
-        resumeBt.setFont(defaultFont);
-
-        JButton clearBt = new JButton("초기화");
-        clearBt.setFont(defaultFont);
-
         JButton endBt = new JButton("종료");
         endBt.setFont(defaultFont);
 
-
-        resumeBt.setVisible(false);
-        clearBt.setVisible(false);
+        endBt.setVisible(false);
 
         startBt.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
 
-                LocalTime now = LocalTime.now();
-                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
-                lec_start = now.format(formatter);
-                System.out.println("시작 시간: " + lec_start);
+                if(lecture_name == null || lecture_time == null) {
+                    JOptionPane.showMessageDialog(null, "강의명, 강의 시간을 입력 후 확인 버튼을 눌러주세요.", "Message", JOptionPane.WARNING_MESSAGE);
+                }
+                else {
+                    ActivatePy.start();
 
-                timer.start(panel4);
+                    LocalTime now = LocalTime.now();
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+                    lec_start = now.format(formatter);
+                    System.out.println("시작 시간: " + lec_start);
 
-                String[] time = lecture_time.split(":");
-                int hour = Integer.valueOf(time[0]);
-                int min = Integer.valueOf(time[1]);
-                int sec = Integer.valueOf(time[2]);
-                sec = hour * 3600 + min * 60 + sec;
+                    timer.start(panel4);
 
-                System.out.println(sec);
+                    String[] time = lecture_time.split(":");
+                    int hour = Integer.valueOf(time[0]);
+                    int min = Integer.valueOf(time[1]);
+                    int sec = Integer.valueOf(time[2]);
+                    sec = hour * 3600 + min * 60 + sec;
 
-                timerbar.start(sec, panel3);
+                    System.out.println(sec);
+
+                    timerbar.start(sec, panel3);
+
+                    startBt.setVisible(false);
+                    endBt.setVisible(true);
+                }
 
             }
         });
@@ -145,6 +146,9 @@ public class StartPanel extends JPanel {
 
                 DataWriter writer = new DataWriter();
                 writer.WriteData(lecture_name, lec_start, lec_end, lecture_time);
+
+                endBt.setVisible(false);
+                startBt.setVisible(true);
             }
         });
 
@@ -152,8 +156,6 @@ public class StartPanel extends JPanel {
         centerpanel.add(endBt);
 
         //downpanel 시작
-
-        JLabel timeL = new JLabel("00:00:00");
 
         downpanel.add(panel3);
         downpanel.add(panel4);
