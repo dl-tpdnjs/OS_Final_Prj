@@ -32,20 +32,21 @@ class SegmentedBar extends JPanel {
         g.setColor(mainColor);
         g.fillRect(0, 0, totalWidth, height);
 
-        g.setColor(new Color(100,200,200));
-        g.fillRect(0,0,lecutre_time,height);
-        //g.fillRect(0,0), lec;
+        // 실제 강의 시간을 다른 색상으로 칠함 (예: 파란색)
+        g.setColor(new Color(100, 200, 200));
+        int lectureWidth = (int) ((double) lecutre_time / totalSeconds * totalWidth);
+        g.fillRect(0, 0, lectureWidth, height);
 
-
-        // 하이라이트 구간을 다른 색상으로 칠함
+        // 하이라이트 구간을 다른 색상으로 칠함 (예: 빨간색)
         g.setColor(highlightColor);
         for (int[] highlightTime : highlightTimes) {
             System.out.print("하이라이트 시작 시간 : ");
-            System.out.println((int) ((double) highlightTime[0]));
+            System.out.println(highlightTime[0]);
 
             int highlightStart = (int) ((double) highlightTime[0] / totalSeconds * totalWidth);
-            int highlightWidth = (int) ((double) highlightTime[2] / totalSeconds * totalWidth);
+            int highlightWidth = (int) ((double) (highlightTime[1] - highlightTime[0]) / totalSeconds * totalWidth);
             g.fillRect(highlightStart, 0, highlightWidth, height);
         }
     }
+
 }
