@@ -1,3 +1,4 @@
+# 원작자: Shayan925 깃허브 링크: https://github.com/Shayan925/ADHD-Aid
 import cv2
 import mediapipe as mp
 import numpy as np
@@ -91,7 +92,7 @@ while True:
 
         elif direction != "CENTER" and not warned:
             t2 = time.time()
-            if t2 - t1 > 0.5:
+            if t2 - t1 > 2:
                 warn(img)
                 warned = True
                 log_focus_loss()
@@ -100,7 +101,7 @@ while True:
     else:
         if not warned:
             t2 = time.time()
-            if t2 - t1 > 0.5:
+            if t2 - t1 > 2:
                 warn(img)
                 warned = True
                 log_focus_loss()
