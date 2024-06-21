@@ -34,7 +34,7 @@ face_mesh = mpFace.FaceMesh(max_num_faces=1,
 # Initialize log.csv
 with open("log.csv", "w", newline='') as f:
     writer = csv.writer(f)
-    writer.writerow(["lost", "regained"])
+    writer.writerow(["lost_start", "lost_end"])
 
 t1 = time.time()
 warned = False
