@@ -376,7 +376,10 @@
 ## 7. 오픈소스 코드 설명(벡엔드분들 여기에 자신이 코드를 어떻게 수정했는지 너무 길게는 아니고 좀 간단하게 작성해보셔요)
 ### 활용한 오픈소스 링크
 - https://github.com/Shayan925/ADHD-Aid
-    - 어떤 점을 수정했는지 작성해주시면 될 것 같습니다!!
+![image](https://github.com/dl-tpdnjs/OS_Final_Prj/assets/167500948/d12b8918-c3c3-413e-a922-a9db05fc8e50)
+![image](https://github.com/dl-tpdnjs/OS_Final_Prj/assets/167500948/d855a6d1-def1-43f8-9478-ddf8a0673171)
+- util.py에 bring_window_to_Front 함수 추가하여 특정 조건에서 백그라운데 있던 opencv 창이 최상단으로 이동하는 기능 구현, warn 함수 실행되면 바로 창이 최상단으로 이동하도록 warn 함수 수
+
 
 
 
