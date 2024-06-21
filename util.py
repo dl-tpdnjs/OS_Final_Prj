@@ -1,3 +1,4 @@
+# 원작자: Shayan925 깃허브 링크: https://github.com/Shayan925/ADHD-Aid
 import cv2
 import numpy as np
 import winsound
@@ -5,12 +6,18 @@ from datetime import datetime
 import csv
 from PIL import ImageFont, ImageDraw, Image
 import threading
-
+import win32gui
+import win32con
+import pyautogui
+import time
 
 fontpath = "fonts/malgunbd.ttf"
 fontpath2 = "fonts/malgun.ttf"
 font = ImageFont.truetype(fontpath, 32)
 font2 = ImageFont.truetype(fontpath2, 22)
+
+window_name = "ADHD Aid"
+cv2.namedWindow(window_name, cv2.WINDOW_NORMAL)
 
 # Determine the center point of the given shape
 def calc_center(indexes, points, img, draw=False):
@@ -18,7 +25,7 @@ def calc_center(indexes, points, img, draw=False):
     center = np.array([cx, cy], dtype=np.int32)
 
     if draw:
-        cv2.circle(img, center, int(radius), (255, 0, 255), 1, cv2.LINE_AA)
+        cv2.circle(img, center, int(radius), (65,255,58), 1, cv2.LINE_AA)
 
     return center
 
@@ -36,9 +43,20 @@ def play_sound():
     audio_file = "warning.wav"
     winsound.PlaySound(audio_file, winsound.SND_FILENAME)
 
+def bring_window_to_front(window_name):
+    hwnd = win32gui.FindWindow(None, window_name)
+    if hwnd:
+        pyautogui.keyDown('alt')
+        pyautogui.press('tab')
+        pyautogui.keyUp('alt')
+        time.sleep(0.5)
+        win32gui.SetForegroundWindow(hwnd)
+        win32gui.ShowWindow(hwnd, win32con.SW_RESTORE)
+
 # Warn the user and the supervisor that their attention is elsewhere 
 # and should pay attention to the screen
 def warn(base_img):
+    bring_window_to_front(window_name)
     h, w, c = base_img.shape
     cv2.rectangle(base_img, (0, 0), (w, h), (0, 0, 255), -1)
 
