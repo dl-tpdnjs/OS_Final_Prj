@@ -18,7 +18,7 @@ def calc_center(indexes, points, img, draw=False):
     center = np.array([cx, cy], dtype=np.int32)
 
     if draw:
-        cv2.circle(img, center, int(radius), (255, 0, 255), 1, cv2.LINE_AA)
+        cv2.circle(img, center, int(radius), (65,255,58), 1, cv2.LINE_AA)
 
     return center
 
