@@ -389,15 +389,21 @@
 - util.py에 bring_window_to_Front 함수 추가하여 특정 조건에서 백그라운데 있던 opencv 창이 최상단으로 이동하는 기능 구현, warn 함수 실행되면 바로 창이 최상단으로 이동하도록 warn 함수 수정
 
 ![폰트수정](https://github.com/dl-tpdnjs/OS_Final_Prj/assets/163426589/8618f2bf-3fc7-4990-84c2-cc7333f20159)
+ - util.py와 eye_tracker.py 맑은고딕으 폰트 지정
 
 ![warn1](https://github.com/dl-tpdnjs/OS_Final_Prj/assets/163426589/c9cb9c89-757a-48f0-bddf-7ddc96f32ba1)
+- warn() 함수에서 경고 이미지를 삽입하는 부분 추가, 10초부터 카운트다운이 되는 부분 추가
+  
 ![warn2](https://github.com/dl-tpdnjs/OS_Final_Prj/assets/163426589/c4510faa-8f3a-4caf-b2c0-408ed159fc7d)
 
 ![focus loss](https://github.com/dl-tpdnjs/OS_Final_Prj/assets/163426589/d061d1cc-449f-4002-83e2-11f1b885985e)
+- 사용자가 집중력을 잃은 시점을 csv 파일의 lost_start 부분에 입력하는 함수 추가
 
 ![focus regain](https://github.com/dl-tpdnjs/OS_Final_Prj/assets/163426589/ff72eaf3-1ab8-4947-9244-321467e252bc)
+- 사용자가 집중력을 회복한 시점을 csv 파일의 lost_end 부분에 입력하는 함수 추가
 
 ![방향 한국어로 바꾸기](https://github.com/dl-tpdnjs/OS_Final_Prj/assets/163426589/65bc3c48-a7c8-409b-a92d-9e4ec4e70f47)
+- 웹캠 화면의 방향을 나타내는 부분을 한국어로 수정
 
 ![집중 시간 측정](https://github.com/dl-tpdnjs/OS_Final_Prj/assets/163426589/10908a0f-eb2f-42e7-960f-e3df8b9f6b4a)
 
