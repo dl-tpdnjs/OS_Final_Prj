@@ -115,28 +115,35 @@ public class StartPanel extends JPanel {
 
         startBt.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-
+                
+                //강의명, 강의 시간 입력 받지 못한 경우에 알림창 뜨도록 설정
                 if(lecture_name == null || lecture_time == null) {
                     JOptionPane.showMessageDialog(null, "강의명, 강의 시간을 입력 후 확인 버튼을 눌러주세요.", "Message", JOptionPane.WARNING_MESSAGE);
                 }
                 else {
+                    //python 파일 실행 시작
                     ActivatePy.start();
 
+                    //시작 시간 저장, 출력
                     LocalTime now = LocalTime.now();
                     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
                     lec_start = now.format(formatter);
                     System.out.println("시작 시간: " + lec_start);
 
+                    //타이머 시작
                     timer.start(panel4);
 
+                    //입력 받은 강의 시간 초로 변환
                     String[] time = lecture_time.split(":");
                     int hour = Integer.valueOf(time[0]);
                     int min = Integer.valueOf(time[1]);
                     int sec = Integer.valueOf(time[2]);
                     sec = hour * 3600 + min * 60 + sec;
 
+                   //변환한 시간 출력
                     System.out.println(sec);
-
+                    
+                    //타이머 바 시작
                     timerbar.start(sec, panel3);
 
                     startBt.setVisible(false);
@@ -148,16 +155,20 @@ public class StartPanel extends JPanel {
 
         endBt.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                //python 파일 실행 중단
                 ActivatePy.end();
 
+                //종료 시간 저장, 출력
                 LocalTime now = LocalTime.now();
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
                 lec_end = now.format(formatter);
                 System.out.println("종료 시간: " + lec_end);
 
+                //타이머 중단
                 timer.stop();
                 timerbar.stop();
 
+                //csv 파일에 데이터 입력
                 DataWriter writer = new DataWriter();
                 writer.WriteData(lecture_name, lec_start, lec_end, lecture_time);
 
