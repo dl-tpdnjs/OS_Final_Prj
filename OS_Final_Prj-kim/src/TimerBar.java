@@ -35,8 +35,8 @@ public class TimerBar {
                     timebar.setPreferredSize(new Dimension(width, height));
 
                     SwingUtilities.invokeLater(() -> {
-                        panel.revalidate();  // 패널을 다시 그리도록 함
-                        panel.repaint();     // 패널을 다시 그리도록 함
+                        panel.revalidate();
+                        panel.repaint();
                     });
                 }
                 else break;
