@@ -378,7 +378,29 @@
 - https://github.com/Shayan925/ADHD-Aid
 ![image](https://github.com/dl-tpdnjs/OS_Final_Prj/assets/167500948/d12b8918-c3c3-413e-a922-a9db05fc8e50)
 ![image](https://github.com/dl-tpdnjs/OS_Final_Prj/assets/167500948/d855a6d1-def1-43f8-9478-ddf8a0673171)
-- util.py에 bring_window_to_Front 함수 추가하여 특정 조건에서 백그라운데 있던 opencv 창이 최상단으로 이동하는 기능 구현, warn 함수 실행되면 바로 창이 최상단으로 이동하도록 warn 함수 수정 
+- util.py에 bring_window_to_Front 함수 추가하여 특정 조건에서 백그라운데 있던 opencv 창이 최상단으로 이동하는 기능 구현, warn 함수 실행되면 바로 창이 최상단으로 이동하도록 warn 함수 수정
+
+![폰트수정](https://github.com/dl-tpdnjs/OS_Final_Prj/assets/163426589/8618f2bf-3fc7-4990-84c2-cc7333f20159)
+
+![warn1](https://github.com/dl-tpdnjs/OS_Final_Prj/assets/163426589/c9cb9c89-757a-48f0-bddf-7ddc96f32ba1)
+![warn2](https://github.com/dl-tpdnjs/OS_Final_Prj/assets/163426589/c4510faa-8f3a-4caf-b2c0-408ed159fc7d)
+
+![focus loss](https://github.com/dl-tpdnjs/OS_Final_Prj/assets/163426589/d061d1cc-449f-4002-83e2-11f1b885985e)
+
+![focus regain](https://github.com/dl-tpdnjs/OS_Final_Prj/assets/163426589/ff72eaf3-1ab8-4947-9244-321467e252bc)
+
+![방향 한국어로 바꾸기](https://github.com/dl-tpdnjs/OS_Final_Prj/assets/163426589/65bc3c48-a7c8-409b-a92d-9e4ec4e70f47)
+
+![집중 시간 측정](https://github.com/dl-tpdnjs/OS_Final_Prj/assets/163426589/10908a0f-eb2f-42e7-960f-e3df8b9f6b4a)
+
+
+
+
+
+
+
+
+
 
 
 
