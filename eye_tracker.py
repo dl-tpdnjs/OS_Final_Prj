@@ -92,7 +92,7 @@ while True:
 
         elif direction != "CENTER" and not warned:
             t2 = time.time()
-            if t2 - t1 > 2:
+            if t2 - t1 > 0.5:
                 warn(img)
                 warned = True
                 log_focus_loss()
@@ -101,7 +101,7 @@ while True:
     else:
         if not warned:
             t2 = time.time()
-            if t2 - t1 > 2:
+            if t2 - t1 > 0.5:
                 warn(img)
                 warned = True
                 log_focus_loss()
