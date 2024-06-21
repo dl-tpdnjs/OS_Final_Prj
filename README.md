@@ -1,7 +1,3 @@
-![image](https://github.com/dl-tpdnjs/OS_Final_Prj/assets/163426589/0a0082de-1b6f-4c0a-98af-1ce2cfa6290e)# 👀 ADHD인들을 위한 온라인(사이버) 강의 집중 보조 프로그램 README
-
-
-
 ## 프로젝트 개발 배경
 
 - adhd는 주의력결핍 과잉행동장애(Attention-Deficit Hyperactivity Disorder)의 약자로, 주의력이 부족하여 과다활동, 충동성 등을 보이는 상태를 말한다. 건강보험공단에 따르면 장기적 추적 연구 결과 ADHD를 겪는 아동의 60% 이상이 성인이 되어서도 증상을 경험하는 것으로 알려져 있다.
