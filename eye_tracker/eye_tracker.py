@@ -1,3 +1,4 @@
+# 원작자: Shayan925 깃허브 링크: https://github.com/Shayan925/ADHD-Aid
 import cv2
 import mediapipe as mp
 import numpy as np
