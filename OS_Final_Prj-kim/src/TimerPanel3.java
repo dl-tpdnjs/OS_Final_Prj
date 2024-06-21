@@ -4,24 +4,24 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.nio.file.*;
 
 class TimerPanel3 extends JPanel {
     private List<SegmentedBar> segmentedBars; // SegmentedBar 객체들을 담을 리스트
     private String filePath;
     private volatile boolean shouldReload; // 파일 변경 감지 플래그
-    private JLabel label;
     private JPanel mainPanel; // 메인 패널 필드 추가
     private Font defaultFont = new Font("NPS font", Font.PLAIN, 15);
-    private Color mainColor = new Color(0xfab95b);
     private Color backgroundColor = new Color(0xe8e2db);
     private Color highlightColor = new Color(0xf5564e);
+    private Color mainColor = new Color(0x1a3263);
+    private Color whiteColor = Color.WHITE;
 
 
     // 생성자
@@ -96,7 +96,6 @@ class TimerPanel3 extends JPanel {
         return mainPanel;
     }
 
-    // CSV 파일을 읽어 LectureData 맵으로 반환하는 메서드
     private Map<Integer, LectureData> readCSV(String csvFilePath) throws IOException, ParseException {
         Map<Integer, LectureData> lectureDataMap = new HashMap<>(); // LectureData 객체를 담을 맵 생성
 
@@ -119,14 +118,14 @@ class TimerPanel3 extends JPanel {
             int lostEnd = calculateSecondsFromTimeString(data[6], sdf); // 집중하지 않은 종료 시간
 
             // 버튼 누름 시간 계산 (초 단위)
-            int buttonDuration = buttonEnd - buttonStart;
+            int buttonDuration = calculateTimeDifference(buttonStart, buttonEnd);
             // 강의 시간 계산 (초 단위)
             int lectureDurationSeconds = lectureDuration;
             // 집중하지 않은 시간의 시작과 종료 시간을 초 단위로 계산
-            int highlightStart = lostStart - buttonStart; // 집중하지 않은 시작 시간 계산
-            int highlightEnd = lostEnd - lostStart; // 집중하지 않은 종료 시간 계산
+            int highlightStart = calculateTimeDifference(buttonStart, lostStart); // 집중하지 않은 시작 시간 계산
+            int highlightEnd = calculateTimeDifference(lostStart, lostEnd); // 집중하지 않은 종료 시간 계산
 
-            int highlightTime = lostEnd - buttonStart;
+            int highlightTime = calculateTimeDifference(buttonStart, lostEnd);
 
             int lostTime = highlightEnd - highlightStart;
             int lecLostremove = (lectureDurationSeconds - lostTime);
@@ -137,20 +136,21 @@ class TimerPanel3 extends JPanel {
             System.out.println("실제 강의 시간 : " + lectureDuration);
             System.out.println("실제 강의에서 다시 복습할 시간 : " + lecLostremove);
 
-
             // LectureData 맵에 강의 번호를 키로 하는 추가
             lectureDataMap.computeIfAbsent(lectureNum, k -> new LectureData(lectureName, buttonDuration, lectureDurationSeconds))
-                    .addHighlightTime(new int[]{highlightStart, highlightTime, highlightEnd, lecLostremove,lectureDurationSeconds}); // 집중하지 않은 시간 추가
+                    .addHighlightTime(new int[]{highlightStart, highlightTime, highlightEnd, lecLostremove, lectureDurationSeconds}); // 집중하지 않은 시간 추가
         }
 
         reader.close(); // 리더 닫기
         return lectureDataMap; // LectureData 맵 반환
     }
 
+
     private JLabel createLectureNameLabel(String lectureName) {
         JLabel name = new JLabel("< " + lectureName + " >");
         name.setBackground(new Color(0x003b6f));
         name.setFont(new Font("NPS font", Font.BOLD, 20));
+        name.setForeground(mainColor);
         return name;
     }
 
@@ -179,6 +179,8 @@ class TimerPanel3 extends JPanel {
 
         JLabel label = new JLabel(labelText.toString());
         label.setFont(defaultFont); // 폰트 설정
+        label.setForeground(Color.DARK_GRAY);
+
 
         return label; // 완성된 라벨 반환
     }
@@ -211,6 +213,9 @@ class TimerPanel3 extends JPanel {
 
         JLabel label = new JLabel(labelTextBeforeFirstComma.toString());
         label.setFont(defaultFont); // 폰트 설정
+        label.setForeground(Color.DARK_GRAY);
+
+
 
         return label; // 완성된 라벨 반환
     }
@@ -248,6 +253,7 @@ class TimerPanel3 extends JPanel {
 
         JLabel label = new JLabel(labelText.toString());
         label.setFont(defaultFont); // 폰트 설정
+        label.setForeground(Color.DARK_GRAY);
 
         return label; // 완성된 라벨 반환
 
@@ -284,6 +290,18 @@ class TimerPanel3 extends JPanel {
 
         return seconds; // 초 단위로 변환된 값을 반환
     }
+
+
+    // 시간 차이를 계산하는 메서드 추가
+    public int calculateTimeDifference(int startTime, int endTime) {
+        // 종료 시간이 시작 시간보다 작다면, 종료 시간이 다음 날로 넘어갔다고 가정
+        if (endTime < startTime) {
+            // 24시간(하루)의 초를 더하여 시간 차이를 계산
+            endTime += 24 * 3600;
+        }
+        return endTime - startTime;
+    }
+
 
     // 파일 변경 감지 스레드
     private class FileWatcher implements Runnable {
